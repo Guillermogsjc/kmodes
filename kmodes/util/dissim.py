@@ -6,13 +6,14 @@ Dissimilarity measures for clustering
 # License: MIT
 
 import numpy as np
-import sklearn.metrics.pairwise.pairwise_distances as pw
+import sklearn as sk  
 
 
 def matching_dissim(a, b):
     """Simple matching dissimilarity function"""
                
-    return pw(np.atleast_2d(a), np.atleast_2d(b), metric='l1', n_jobs=-1).astype(int).ravel()
+    return sk.metrics.pairwise.pairwise_distances(np.atleast_2d(a),
+                                                  np.atleast_2d(b), metric='l1', n_jobs=-1).astype(int).ravel()
 
 def euclidean_dissim(a, b):
     """Euclidean distance dissimilarity function"""
