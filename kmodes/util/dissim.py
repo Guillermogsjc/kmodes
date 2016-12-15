@@ -10,7 +10,7 @@ import numpy as np
 
 def matching_dissim(a, b):
     """Simple matching dissimilarity function"""
-    return np.sum(np.abs(a-b), axis=1)
+    return np.sum(np.abs(a-b))
 
 
 def euclidean_dissim(a, b):
